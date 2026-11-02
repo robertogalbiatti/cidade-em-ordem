@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  // Brand
+  --color-primary: #142b43;
+  --color-primary-light: #244d70;
+  --color-accent: #3981c5;
+
+  // Background
+  --color-background: #f3f6fa;
+  --color-surface: #ffffff;
+
+  // Text
+  --color-text: #263445;
+  --color-text-secondary: #64748b;
+
+  // Borders
+  --color-border: #e2e8f0;
+
+  // Layout
+  --sidebar-width: 260px;
+  --header-height: 72px;
+  --border-radius: 12px;
+}
+
+[data-theme="dark"] {
+  --color-primary: #0d1b2a;
+  --color-primary-light: #1b344d;
+  --color-accent: #64a9ed;
+
+  --color-background: #101b29;
+  --color-surface: #192738;
+
+  --color-text: #e5edf5;
+  --color-text-secondary: #9aadc1;
+
+  --color-border: #2b3b4e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}
