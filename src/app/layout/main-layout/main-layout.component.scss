@@ -1,0 +1,26 @@
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  margin-left: var(--sidebar-width);
+}
+
+.page-content {
+  padding: 28px;
+  min-height: calc(100vh - var(--header-height));
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .page-content {
+    padding: 20px 16px;
+  }
+}

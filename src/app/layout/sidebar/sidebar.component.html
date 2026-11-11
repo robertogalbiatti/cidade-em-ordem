@@ -1,1 +1,47 @@
-<p>sidebar works!</p>
+<aside class="sidebar">
+  <!-- Identidade visual -->
+  <div class="sidebar-brand">
+    <div class="brand-icon">
+      <fa-icon [icon]="faLandmark"></fa-icon>
+    </div>
+
+    <div class="brand-info">
+      <h1>Cidade em Ordem</h1>
+      <span>Sua cidade. Seus dados.</span>
+    </div>
+  </div>
+
+  <!-- Navegação principal -->
+  <nav class="sidebar-navigation">
+    <span class="navigation-title">MENU PRINCIPAL</span>
+
+    <ul class="navigation-list">
+      @for (item of menuItems; track item.route) {
+        <li>
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <span class="menu-icon">
+              <fa-icon [icon]="item.icon"></fa-icon>
+            </span>
+
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <!-- Rodapé -->
+  <div class="sidebar-footer">
+    <a routerLink="/sobre" routerLinkActive="active">
+      <span class="menu-icon">
+        <fa-icon [icon]="faCircleInfo"></fa-icon>
+      </span>
+
+      <span>Sobre o projeto</span>
+    </a>
+  </div>
+</aside>

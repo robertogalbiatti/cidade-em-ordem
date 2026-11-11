@@ -1,0 +1,141 @@
+:host {
+  display: block;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 100vh;
+  padding: 24px 16px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  z-index: 100;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 28px;
+}
+
+.brand-icon {
+  fa-icon {
+    font-size: 22px;
+  }
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  h1 {
+    margin: 0;
+    color: #142b43;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  span {
+    color: #64748b;
+    font-size: 12px;
+  }
+}
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navigation-title {
+  padding: 0 12px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      color: #244d70;
+      background: #f3f6fa;
+    }
+
+    &.active {
+      color: #244d70;
+      background: #eaf1f8;
+      font-weight: 600;
+    }
+  }
+}
+
+.menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.brand-icon {
+  fa-icon {
+    font-size: 22px;
+  }
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    color: #64748b;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+
+    &:hover,
+    &.active {
+      color: #244d70;
+      background: #f3f6fa;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+}
