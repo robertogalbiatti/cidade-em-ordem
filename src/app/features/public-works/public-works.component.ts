@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faHammer } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-public-works',
@@ -10,5 +10,5 @@ import { faHammer } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './public-works.component.scss',
 })
 export class PublicWorksComponent {
-  faHammer = faHammer;
+  faExternalLinkAlt = faExternalLinkAlt;
 }

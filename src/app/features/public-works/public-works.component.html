@@ -1,40 +1,35 @@
-<section class="public-works">
-  <div class="page-heading">
-    <div>
-      <span class="eyebrow">CIDADE EM ORDEM / OBRAS</span>
-
-      <h2>Obras públicas</h2>
-
-      <p>
-        Acompanhe projetos, investimentos e intervenções realizados no município
-        de Indaiatuba.
-      </p>
-    </div>
-
-    <span class="integration-status"> Dados em integração </span>
+<div class="sources-section">
+  <div class="section-heading">
+    <h3>Fontes oficiais</h3>
+    <p>
+      Consulte os dados diretamente nos portais responsáveis pela divulgação das
+      informações.
+    </p>
   </div>
 
-  <div class="content-section">
-    <div class="section-heading">
-      <h3>Acompanhamento de obras</h3>
-
-      <p>
-        Informações sobre obras públicas, seus responsáveis, investimentos e
-        andamento.
-      </p>
-    </div>
-
-    <div class="empty-state">
-      <div class="empty-state-icon">
-        <fa-icon [icon]="$any(faHammer)"></fa-icon>
+  <div class="source-links">
+    <a
+      href="https://indaiatuba.sp.gov.br/obras/obras-publicas/obras/obras-em-andamento/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div>
+        <h4>Prefeitura de Indaiatuba</h4>
+        <p>Obras em andamento e acompanhamento físico-financeiro.</p>
       </div>
+      <fa-icon [icon]="$any(faExternalLinkAlt)"></fa-icon>
+    </a>
 
-      <h3>Estamos preparando esta seção</h3>
-
-      <p>
-        Estamos trabalhando na integração de fontes públicas para disponibilizar
-        informações verificáveis sobre as obras do município.
-      </p>
-    </div>
+    <a
+      href="https://paineldeobras.tce.sp.gov.br/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div>
+        <h4>Tribunal de Contas de SP</h4>
+        <p>Painel de Obras Públicas e fiscalização.</p>
+      </div>
+      <fa-icon [icon]="$any(faExternalLinkAlt)"></fa-icon>
+    </a>
   </div>
-</section>
+</div>
