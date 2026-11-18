@@ -82,6 +82,58 @@ app.get('/api/public-works', async (req, res) => {
 
       const latestProgress = normalizedProgress.at(-1) ?? null;
 
+      const lastUpdatedAt = latestProgress?.submissionDate ?? null;
+
+      let updateStatus = 'Sem histórico';
+      let daysSinceUpdate = null;
+
+      if (lastUpdatedAt) {
+        const [day, month, year] = lastUpdatedAt.split('/').map(Number);
+
+        const lastUpdateDate = Date.UTC(year, month - 1, day);
+        const today = new Date();
+
+        const todayUTC = Date.UTC(
+          today.getFullYear(),
+          today.getMonth(),
+          today.getDate()
+        );
+
+        daysSinceUpdate = Math.floor(
+          (todayUTC - lastUpdateDate) / (1000 * 60 * 60 * 24)
+        );
+
+        if (daysSinceUpdate <= 30) {
+          updateStatus = 'Recente';
+        } else if (daysSinceUpdate <= 60) {
+          updateStatus = 'Atenção';
+        } else {
+          updateStatus = 'Desatualizada';
+        }
+      }
+
+      let executionStatus = 'Sem dados de execução';
+
+      if (latestProgress) {
+        executionStatus =
+          latestProgress.executedPercentageNumber >= 100
+            ? 'Execução informada como 100%'
+            : 'Execução parcial';
+      }
+
+      console.log({
+        tableIndex: index,
+        title,
+        startDate,
+        deliveryDate,
+        updatedDeliveryDate,
+        progressCount: progress.length,
+        latestExecutedPercentage:
+          latestProgress?.executedPercentageNumber ?? null,
+        latestProgressSubmissionDate:
+          latestProgress?.submissionDate ?? null
+      });
+
       works.push({
         tableIndex: index,
         title,
@@ -90,7 +142,11 @@ app.get('/api/public-works', async (req, res) => {
         deliveryDate,
         updatedDeliveryDate,
         progress: normalizedProgress,
-        latestProgress
+        latestProgress,
+        lastUpdatedAt,
+        executionStatus,
+        updateStatus,
+        daysSinceUpdate
       });
     });
 
